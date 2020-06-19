@@ -28,7 +28,7 @@ class SysInfoCase(unittest.TestCase):
 
     def test_get_boot_time_returns_28_characters(self):
         # 27 for Windows 28 for Mac
-        self.assertIn(len(get_boot_time()), [27, 28])
+        self.assertIn(len(get_boot_time()), [27, 28, 29])
 
 
 if __name__ == '__main__':
