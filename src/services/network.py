@@ -1,5 +1,6 @@
 import psutil
 import socket
+from src.services.utilities import get_size
 
 
 def get_network_interfaces():
@@ -55,9 +56,17 @@ def print_network_interfaces():
 def get_network_io():
     net_io = psutil.net_io_counters()
     sent = net_io.bytes_sent
-    recieved = net_io.bytes_recv
+    received = net_io.bytes_recv
 
-    return {"sent": sent, "recieved": recieved}
+    return {"sent": sent, "received": received}
+
+
+def print_network_io():
+    input_network_io = get_network_io()
+
+    print("=" * 10, "Network IO", "=" * 10)
+    print(f"Total sent: {get_size(input_network_io['sent'])}")
+    print(f"Total received: {get_size(input_network_io['received'])}")
 
 
 if __name__ == '__main__':
@@ -66,3 +75,4 @@ if __name__ == '__main__':
     print_network_interfaces()
     network_io = get_network_io()
     print(network_io)
+    print_network_io()

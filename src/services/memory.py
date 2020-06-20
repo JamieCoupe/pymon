@@ -22,10 +22,10 @@ def print_virtual_memory():
 
     print("=" * 20, "Memory Information", "=" * 20)
     print("=" * 10, "Virtual Memory", "=" * 10)
-    print(f"Total: {virtual_memory['total']}")
-    print(f"Available: {virtual_memory['available']}")
-    print(f"Used: {virtual_memory['used']}")
-    print(f"Percentage Used: {virtual_memory['percentage']}%")
+    print(f"   Total: {virtual_memory['total']}")
+    print(f"   Available: {virtual_memory['available']}")
+    print(f"   Used: {virtual_memory['used']}")
+    print(f"   Percentage Used: {virtual_memory['percentage']}%")
 
 
 def get_swap_memory():
@@ -47,10 +47,10 @@ def print_swap_memory():
     swap_memory = get_swap_memory()
 
     print("=" * 10, "Swap Memory", "=" * 10)
-    print(f"Total: {swap_memory['total']}")
-    print(f"Available: {swap_memory['available']}")
-    print(f"Used: {swap_memory['used']}")
-    print(f"Percentage Used: {swap_memory['percentage']}%")
+    print(f"   Total: {swap_memory['total']}")
+    print(f"   Available: {swap_memory['available']}")
+    print(f"   Used: {swap_memory['used']}")
+    print(f"   Percentage Used: {swap_memory['percentage']}%")
 
 
 if __name__ == '__main__':

@@ -16,12 +16,12 @@ def print_sysinfo():
     input_sys_info_dict = get_sysinfo()
     print("=" * 20, "System Information", "=" * 20)
     print("=" * 10, "General", "=" * 10)
-    print(f"System: {input_sys_info_dict['system']}")
-    print(f"Node Name: {input_sys_info_dict['node_name']}")
-    print(f"Release: {input_sys_info_dict['release']}")
-    print(f"Version: {input_sys_info_dict['version']}")
-    print(f"Machine: {input_sys_info_dict['architecture']}")
-    print(f"Processor: {input_sys_info_dict['processor']}")
+    print(f"   System: {input_sys_info_dict['system']}")
+    print(f"   Node Name: {input_sys_info_dict['node_name']}")
+    print(f"   Release: {input_sys_info_dict['release']}")
+    print(f"   Version: {input_sys_info_dict['version']}")
+    print(f"   Machine: {input_sys_info_dict['architecture']}")
+    print(f"   Processor: {input_sys_info_dict['processor']}")
 
 
 def get_boot_time():
@@ -35,7 +35,7 @@ def get_boot_time():
 def print_boot_time():
     boot_time = get_boot_time()
     print("=" * 10, "Boot Time", "=" * 10)
-    print(boot_time)
+    print(f"   {boot_time}")
 
 
 if __name__ == '__main__':

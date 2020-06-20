@@ -62,8 +62,8 @@ def get_disk_io():
 def print_disk_io():
     input_disk_io = get_disk_io()
     print("=" * 10, "IO Since Boot", "=" * 10)
-    print(f"Total read: {get_size(input_disk_io['read'])}")
-    print(f"Total write: {get_size(input_disk_io['write'])}")
+    print(f"   Total read: {get_size(input_disk_io['read'])}")
+    print(f"   Total write: {get_size(input_disk_io['write'])}")
 
 
 if __name__ == '__main__':

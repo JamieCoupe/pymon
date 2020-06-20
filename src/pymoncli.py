@@ -2,6 +2,7 @@ from src.services import sysinfo
 from src.services import cpu
 from src.services import memory
 from src.services import disk
+from src.services import network
 
 
 def main():
@@ -21,6 +22,10 @@ def main():
     # Disk Information
     disk.print_disk_partitions_and_usage()
     disk.print_disk_io()
+
+    # Network Information
+    network.print_network_interfaces()
+    network.print_network_io()
 
 
 if __name__ == '__main__':

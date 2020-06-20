@@ -20,11 +20,11 @@ def get_static_info():
 def print_static_info():
     input_static_cpu_info = get_static_info()
     print("=" * 20, "CPU Info", "=" * 20)
-    print("Physical cores:", input_static_cpu_info['physical_cores'])
-    print("Total cores:", input_static_cpu_info['total_cores'])
+    print("   Physical cores:", input_static_cpu_info['physical_cores'])
+    print("   Total cores:", input_static_cpu_info['total_cores'])
 
-    print(f"Max Frequency: {input_static_cpu_info['max_frequency']}Mhz")
-    print(f"Min Frequency: {input_static_cpu_info['min_frequency']}Mhz")
+    print(f"   Max Frequency: {input_static_cpu_info['max_frequency']}Mhz")
+    print(f"   Min Frequency: {input_static_cpu_info['min_frequency']}Mhz")
 
 
 def get_current_frequency():
@@ -63,13 +63,13 @@ def print_dynamic_info():
     usage_per_core = get_usage_per_core()
     total_cpu_usage = get_total_cpu_usage()
 
-    print(f"Current Frequency: {current_frequency}Mhz")
+    print(f"   Current Frequency: {current_frequency}Mhz")
 
     for usage in usage_per_core:
         core_number = usage_per_core.index(usage) + 1
-        print(f"Core {core_number}: {usage}%")
+        print(f"   Core {core_number}: {usage}%")
 
-    print(f"Total CPU Usage avg: {total_cpu_usage}%")
+    print(f"   Total CPU Usage avg: {total_cpu_usage}%")
 
 
 if __name__ == '__main__':
