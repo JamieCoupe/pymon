@@ -32,23 +32,23 @@ class NetworkTestCase(unittest.TestCase):
         self.assertTrue('ip_broadcast' in dictonary_subkey_lister(get_network_interfaces()))
 
     # IO
-    def test_get_disk_io_returns_not_none(self):
+    def test_get_network_io_returns_not_none(self):
         self.assertTrue(get_network_io() is not None)
 
-    def test_get_disk_io_returns_dict(self):
+    def test_get_network_io_returns_dict(self):
         self.assertTrue(type(get_network_io())is dict)
 
-    def test_get_disk_io_has_read_key(self):
+    def test_get_network_io_has_read_key(self):
         self.assertTrue('sent' in get_network_io())
 
-    def test_get_disk_io_has_write_key(self):
-        self.assertTrue('recieved' in get_network_io())
+    def test_get_network_io_has_write_key(self):
+        self.assertTrue('received' in get_network_io())
 
-    def test_get_disk_io_read_value_not_zero(self):
+    def test_get_network_io_read_value_not_zero(self):
         self.assertFalse(get_network_io()['sent'] == 0)
 
-    def test_get_disk_io_write_value_not_zero(self):
-        self.assertFalse(get_network_io()['recieved'] == 0)
+    def test_get_network_io_write_value_not_zero(self):
+        self.assertFalse(get_network_io()['received'] == 0)
 
 
 if __name__ == '__main__':
