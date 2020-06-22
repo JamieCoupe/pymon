@@ -5,13 +5,14 @@ from tests.unit.services.memorytest import MemoryInfoCase
 from tests.unit.services.disktest import DiskTestCase
 from tests.unit.services.utilitiestest import UtilitiesTestCase
 from tests.unit.services.networktest import NetworkTestCase
+from tests.unit.services.processtest import ProcessTestCase
 
 
 def run_suite():
     # Run only the tests in the specified classes
 
     test_classes_to_run = [CpuInfoCase, SysInfoCase, MemoryInfoCase, DiskTestCase, UtilitiesTestCase,
-                           NetworkTestCase]
+                           NetworkTestCase, ProcessTestCase]
 
     loader = unittest.TestLoader()
 
