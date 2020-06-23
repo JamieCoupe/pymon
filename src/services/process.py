@@ -39,10 +39,12 @@ def get_all_processes_info():
             nice = get_process_priority(process)
             memory_usage = get_process_memory_usage(process)
             n_threads = get_process_threads(process)
+            process_io = get_process_io(process)
 
         processes.append({"pid": pid, "name": name, "create_time": create_time, "cores": number_of_cores,
                           "cpu_usage": cpu_usage, "status": status, "nice": nice, "memory_usage": memory_usage,
-                          "n_threads": n_threads})
+                          "n_threads": n_threads, "read_bytes": process_io["read_bytes"],
+                          "write_bytes": process_io["write_bytes"]})
 
     return processes
 
@@ -56,7 +58,6 @@ def get_process_name(process):
     return name
 
 
-# TODO : Add N/A as ouput for permission error. Add into tests as well
 def get_process_threads(process):
     try:
         n_threads = process.num_threads()
@@ -83,7 +84,7 @@ def get_process_core_usage(process):
         except psutil.AccessDenied:
             cores = "AccessDenied"
     else:
-        cores = "Unavailable"
+        cores = "Not On Platform"
 
     return cores
 
@@ -122,7 +123,7 @@ def get_process_memory_usage(process):
         # get the memory usage in bytes
         memory_usage = process.memory_full_info().uss
     except psutil.AccessDenied:
-        memory_usage = "AccessDenied"
+        memory_usage = 0
 
     return memory_usage
 
@@ -152,10 +153,27 @@ def get_process_username(process):
     return username
 
 
+def construct_dataframe(process_dict, sort_column, columns_to_show, descending):
+    df = pd.DataFrame(process_dict)
+    df.set_index('pid', inplace=True)
+    df.sort_values(sort_column, inplace=True, ascending=not descending)
+    # pretty printing bytes
+    df['memory_usage'] = df['memory_usage'].apply(get_size) if type(df['memory_usage']) is int else df['memory_usage']
+    df['write_bytes'] = df['write_bytes'].apply(get_size) if type(df['write_bytes']) is int else df['write_bytes']
+    df['read_bytes'] = df['read_bytes'].apply(get_size) if type(df['read_bytes']) is int else df['read_bytes']
+    # convert to proper date format
+    df['create_time'] = df['create_time'].apply(datetime.strftime, args=("%Y-%m-%d %H:%M:%S",))
+    # reorder and define used columns
+    df = df[columns_to_show.split(",")]
+    return df
+
+
 if __name__ == '__main__':
     print(f"Random process = {get_random_process()}")
-    # process_info = get_processes_info()
-    print(get_all_processes_info())
+    all_processes = get_all_processes_info()
+    print(all_processes)
+    print(construct_dataframe(all_processes, "memory_usage", "name,cpu_usage,memory_usage,read_bytes,write_bytes,"
+                                                             "status,create_time,nice,n_threads,cores").to_string())
 
 
 # https://www.thepythoncode.com/code/make-process-monitor-python
