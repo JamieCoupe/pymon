@@ -19,7 +19,7 @@ def get_random_process():
     return random
 
 
-def get_processes_info():
+def get_all_processes_info():
     # the list the contain all process dictionaries
     processes = []
     for process in psutil.process_iter():
@@ -31,11 +31,11 @@ def get_processes_info():
                 # System Idle Process for Windows NT, useless to see
                 continue
 
-            name = process.name()
-            create_time = get_create_time(process)
-            number_of_cores = get_number_of_cores(process)
-            cpu_usage = get_cpu_usage(process)
-            status = process.status()
+            name = get_process_name(process)
+            create_time = get_process_create_time(process)
+            number_of_cores = get_process_core_usage(process)
+            cpu_usage = get_process_cpu_usage(process)
+            status = get_process_cpu_usage(process)
             nice = get_process_priority(process)
             memory_usage = get_process_memory_usage(process)
             n_threads = get_process_threads(process)
@@ -46,17 +46,27 @@ def get_processes_info():
 
     return processes
 
+
+def get_process_name(process):
+    try:
+        name = process.name()
+    except psutil.AccessDenied:
+        name = "N/A"
+
+    return name
+
+
 # TODO : Add N/A as ouput for permission error. Add into tests as well
 def get_process_threads(process):
     try:
         n_threads = process.num_threads()
     except psutil.AccessDenied:
-        n_threads = 0
+        n_threads = "AccessDenied"
 
     return n_threads
 
 
-def get_create_time(process):
+def get_process_create_time(process):
     try:
         create_time = datetime.fromtimestamp(process.create_time())
     except OSError:
@@ -65,27 +75,36 @@ def get_create_time(process):
     return create_time
 
 
-def get_number_of_cores(process):
+def get_process_core_usage(process):
     if 'nt' in os.name:
         try:
             # get the number of CPU cores that can execute this process
             cores = len(process.cpu_affinity())
         except psutil.AccessDenied:
-            cores = 0
+            cores = "AccessDenied"
     else:
-        cores = 0
+        cores = "Unavailable"
 
     return cores
 
 
-def get_cpu_usage(process):
+def get_process_cpu_usage(process):
     try:
         # get the number of CPU cores that can execute this process
         cpu_usage = process.cpu_percent()
     except psutil.AccessDenied:
-        cpu_usage = "N/A"
+        cpu_usage = "AccessDenied"
 
     return cpu_usage
+
+
+def get_process_status(process):
+    try:
+        status = process.status()
+    except psutil.AccessDenied:
+        status = "AccessDenied"
+
+    return status
 
 
 def get_process_priority(process):
@@ -93,7 +112,7 @@ def get_process_priority(process):
         # get the process priority (a lower value means a more prioritized process)
         nice = int(process.nice())
     except psutil.AccessDenied:
-        nice = 0
+        nice = "AccessDenied"
 
     return nice
 
@@ -103,7 +122,7 @@ def get_process_memory_usage(process):
         # get the memory usage in bytes
         memory_usage = process.memory_full_info().uss
     except psutil.AccessDenied:
-        memory_usage = 0
+        memory_usage = "AccessDenied"
 
     return memory_usage
 
@@ -128,7 +147,7 @@ def get_process_username(process):
     try:
         username = process.username()
     except psutil.AccessDenied:
-        username = 0
+        username = "AccessDenied"
 
     return username
 
@@ -136,7 +155,7 @@ def get_process_username(process):
 if __name__ == '__main__':
     print(f"Random process = {get_random_process()}")
     # process_info = get_processes_info()
-    print(get_processes_info())
+    print(get_all_processes_info())
 
 
 # https://www.thepythoncode.com/code/make-process-monitor-python
