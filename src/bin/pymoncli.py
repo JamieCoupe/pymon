@@ -24,7 +24,7 @@ def main():
                                 "cores")
     parser.add_argument("-s", "--sort-by", dest="sort_by", help="Column to sort by, default is memory_usage .",
                         default="memory_usage")
-    parser.add_argument("--descending", action="store_true", help="Whether to sort in descending order.")
+    parser.add_argument("--descending", "-d", action="store_true", help="Whether to sort in descending order.")
     parser.add_argument("-n", help="Number of processes to show, will show all if 0 is specified, default is 25 .",
                         default=25)
     parser.add_argument("-u", "--live-update", action="store_true", help="Whether to keep the program on and updating "
