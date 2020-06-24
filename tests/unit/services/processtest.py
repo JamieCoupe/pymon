@@ -47,7 +47,8 @@ class ProcessTestCase(unittest.TestCase):
         cls.process_io = get_process_io(cls.process)
         cls.processes_info = get_all_processes_info()
         cls.processes = get_all_processes_info()
-        cls.process_dataframe = construct_dataframe(cls.processes_info, "memory_usage", "name,memory_usage")
+        cls.process_dataframe = construct_dataframe(cls.processes_info, "memory_usage", "name,memory_usage",
+                                                    descending=False)
 
     # Process Information
     def test_get_processes_info_returns_list(self):
