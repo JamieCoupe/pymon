@@ -1,8 +1,11 @@
 import unittest
+import sys
 from src.services.cpu import get_static_info
 from src.services.cpu import get_current_frequency
 from src.services.cpu import get_usage_per_core
 from src.services.cpu import get_total_cpu_usage
+
+sys.path.append('/home/runner/work/pymon/pymon/src')
 
 
 class TestCpuInfoCase(unittest.TestCase):
