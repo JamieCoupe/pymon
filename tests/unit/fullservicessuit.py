@@ -1,5 +1,5 @@
 import unittest
-from tests.unit.services.cputest import CpuInfoCase
+from tests.unit.services.cpu_test import CpuInfoCase
 from tests.unit.services.sysinfotest import SysInfoCase
 from tests.unit.services.memorytest import MemoryInfoCase
 from tests.unit.services.disktest import DiskTestCase
