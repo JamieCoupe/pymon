@@ -1,16 +1,9 @@
 import unittest
-import sys
-import os
 from src.services.cpu import get_static_info
 from src.services.cpu import get_current_frequency
 from src.services.cpu import get_usage_per_core
 from src.services.cpu import get_total_cpu_usage
-from
 
-cwd = os.getcwd()
-path = f'{cwd}/../../../src'
-print(path)
-sys.path.append(path)
 
 
 class TestCpuInfoCase(unittest.TestCase):
