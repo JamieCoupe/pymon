@@ -35,6 +35,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        import sys
-        sys.path.append("/home/runner/work/pymon/pymon/src")
         pytest
