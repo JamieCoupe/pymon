@@ -3,7 +3,7 @@ from src.services.sysinfo import get_sysinfo
 from src.services.sysinfo import get_boot_time
 
 
-class SysInfoCase(unittest.TestCase):
+class TestSysInfoCase(unittest.TestCase):
 
     def test_get_sysinfo_returns_dict(self):
         self.assertTrue(type(get_sysinfo()) is dict)

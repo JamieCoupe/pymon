@@ -4,7 +4,7 @@ from src.services.memory import get_virtual_memory
 from src.services.memory import get_swap_memory
 
 
-class MemoryInfoCase(unittest.TestCase):
+class TestMemoryInfoCase(unittest.TestCase):
 
     # Virtual Memory
     def test_get_virtual_memory_returns_dict(self):

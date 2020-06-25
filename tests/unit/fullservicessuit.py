@@ -1,11 +1,11 @@
 import unittest
 from tests.unit.services.cpu_test import CpuInfoCase
-from tests.unit.services.sysinfotest import SysInfoCase
-from tests.unit.services.memorytest import MemoryInfoCase
-from tests.unit.services.disktest import DiskTestCase
-from tests.unit.services.utilitiestest import UtilitiesTestCase
-from tests.unit.services.networktest import NetworkTestCase
-from tests.unit.services.processtest import ProcessTestCase
+from tests.unit.services.sysinfo_test import SysInfoCase
+from tests.unit.services.memory_test import MemoryInfoCase
+from tests.unit.services.disk_test import DiskTestCase
+from tests.unit.services.utilities_test import UtilitiesTestCase
+from tests.unit.services.network_test import NetworkTestCase
+from tests.unit.services.process_test import ProcessTestCase
 
 
 def run_suite():

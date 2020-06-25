@@ -30,7 +30,7 @@ def list_subkey_lister(input_list):
     return subkeys
 
 
-class ProcessTestCase(unittest.TestCase):
+class TestProcessCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):

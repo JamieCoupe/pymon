@@ -5,7 +5,7 @@ from src.services.cpu import get_usage_per_core
 from src.services.cpu import get_total_cpu_usage
 
 
-class CpuInfoCase(unittest.TestCase):
+class TestCpuInfoCase(unittest.TestCase):
 
     def test_get_static_info_returns_dict(self):
         self.assertTrue(type(get_static_info()) is dict)

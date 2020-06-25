@@ -14,7 +14,7 @@ def list_subkey_lister(input_list):
     return subkeys
 
 
-class GpuTestCase(unittest.TestCase):
+class TestGpuCase(unittest.TestCase):
     def test_get_nvidia_gpu_data_returns_list(self):
         self.assertTrue(list, type(get_nvidia_gpu_data))
 

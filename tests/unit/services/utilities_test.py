@@ -3,7 +3,7 @@ import unittest
 from src.services.utilities import get_size
 
 
-class UtilitiesTestCase(unittest.TestCase):
+class TestUtilitiesCase(unittest.TestCase):
 
     def test_get_size_returns_same_when_10_entered(self):
         self.assertEqual("10.00B", get_size(10))

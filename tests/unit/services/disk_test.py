@@ -18,7 +18,7 @@ def dictonary_subkey_lister(dictonary):
     return subkeys
 
 
-class DiskTestCase(unittest.TestCase):
+class TestDiskCase(unittest.TestCase):
 
     # Disk and partitions
     def test_get_disk_partition_and_usage_returns_dict(self):

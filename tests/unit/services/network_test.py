@@ -16,7 +16,7 @@ def dictonary_subkey_lister(dictonary):
     return subkeys
 
 
-class NetworkTestCase(unittest.TestCase):
+class TestNetworkCase(unittest.TestCase):
 
     # Network Interfaces
     def test_get_network_interface_returns_dict(self):
