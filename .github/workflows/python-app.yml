@@ -26,7 +26,7 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Add custom module to Path
-      run:  echo "::add-path::/home/runner/work/pymon/pymon/src"
+      run:  echo "::add-path::/src"
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
