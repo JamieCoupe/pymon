@@ -157,12 +157,15 @@ def construct_dataframe(process_dict, sort_column, columns_to_show, descending):
     df = pd.DataFrame(process_dict)
     df.set_index('pid', inplace=True)
     df.sort_values(sort_column, inplace=True, ascending=not descending)
+
     # pretty printing bytes
     df['memory_usage'] = df['memory_usage'].apply(get_size) if type(df['memory_usage']) is int else df['memory_usage']
     df['write_bytes'] = df['write_bytes'].apply(get_size) if type(df['write_bytes']) is int else df['write_bytes']
     df['read_bytes'] = df['read_bytes'].apply(get_size) if type(df['read_bytes']) is int else df['read_bytes']
+
     # convert to proper date format
     df['create_time'] = df['create_time'].apply(datetime.strftime, args=("%Y-%m-%d %H:%M:%S",))
+
     # reorder and define used columns
     df = df[columns_to_show.split(",")]
     return df
@@ -174,6 +177,3 @@ if __name__ == '__main__':
     print(all_processes)
     print(construct_dataframe(all_processes, "memory_usage", "name,cpu_usage,memory_usage,read_bytes,write_bytes,"
                                                              "status,create_time,nice,n_threads,cores").to_string())
-
-
-# https://www.thepythoncode.com/code/make-process-monitor-python
