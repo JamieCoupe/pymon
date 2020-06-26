@@ -37,7 +37,6 @@ def main():
     processes = process.get_all_processes_info()
     df = process.construct_dataframe(processes, sort_by, columns, descending)
 
-
     # General information
     sysinfo.print_sysinfo()
     sysinfo.print_boot_time()

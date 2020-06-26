@@ -1,11 +1,11 @@
 import unittest
-from tests.unit.services.cpu_test import TestCpuInfoCase
-from tests.unit.services.sysinfo_test import TestSysInfoCase
-from tests.unit.services.memory_test import TestMemoryInfoCase
-from tests.unit.services.disk_test import TestDiskCase
-from tests.unit.services.utilities_test import TestUtilitiesCase
-from tests.unit.services.network_test import TestNetworkCase
-from tests.unit.services.process_test import TestProcessCase
+from tests.pymoncore.unit.services.cpu_test import TestCpuInfoCase
+from tests.pymoncore.unit.services.sysinfo_test import TestSysInfoCase
+from tests.pymoncore.unit.services.memory_test import TestMemoryInfoCase
+from tests.pymoncore.unit.services.disk_test import TestDiskCase
+from tests.pymoncore.unit.services.utilities_test import TestUtilitiesCase
+from tests.pymoncore.unit.services.network_test import TestNetworkCase
+from tests.pymoncore.unit.services.process_test import TestProcessCase
 
 
 def run_suite():
