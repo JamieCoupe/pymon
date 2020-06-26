@@ -8,10 +8,10 @@ from pymoncore.services import disk
 from pymoncore.services import network
 from pymoncore.services import process
 
+
 @app.route('/')
 @app.route('/index')
-@app.route('/home')
-def hello_world():
+def get_index():
 
     # Sysinfo
     static_sysinfo = sysinfo.get_sysinfo()
@@ -46,3 +46,9 @@ def hello_world():
                            disk_partitions=disk_partition_info, disk_io=disk_io,
                            network_interfaces=network_interfaces, network_io=network_io,
                            processes=process_df)
+
+
+@app.route('/home')
+def get_home():
+
+    return render_template("home.html")
