@@ -1,7 +1,5 @@
 import unittest
-
-from src.services.network import get_network_interfaces
-from src.services.network import get_network_io
+from pymoncore.services.network import *
 
 
 def dictonary_subkey_lister(dictonary):

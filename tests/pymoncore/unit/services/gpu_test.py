@@ -1,5 +1,5 @@
 import unittest
-from src.services.gpu import get_nvidia_gpu_data
+from pymoncore.services.gpu import *
 
 
 def list_subkey_lister(input_list):

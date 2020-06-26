@@ -1,12 +1,8 @@
 import argparse
 import os
 import time
-from src.services import sysinfo
-from src.services import cpu
-from src.services import memory
-from src.services import disk
-from src.services import network
-from src.services import process
+from pymoncore.services import cpu, process, memory, network
+from pymoncore.services import disk, sysinfo
 
 
 def main():
@@ -40,7 +36,6 @@ def main():
     # print the processes for the first time
     processes = process.get_all_processes_info()
     df = process.construct_dataframe(processes, sort_by, columns, descending)
-
 
     # General information
     sysinfo.print_sysinfo()

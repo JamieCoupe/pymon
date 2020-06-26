@@ -1,21 +1,6 @@
 import unittest
-import os
 import pandas
-
-from datetime import datetime
-from src.services.process import get_all_processes_info
-from src.services.process import get_process_create_time
-from src.services.process import get_random_process
-from src.services.process import get_process_core_usage
-from src.services.process import get_process_priority
-from src.services.process import get_process_memory_usage
-from src.services.process import get_process_io
-from src.services.process import get_process_cpu_usage
-from src.services.process import get_process_threads
-from src.services.process import get_process_username
-from src.services.process import get_process_name
-from src.services.process import get_process_status
-from src.services.process import construct_dataframe
+from pymoncore.services.process import *
 
 
 def list_subkey_lister(input_list):

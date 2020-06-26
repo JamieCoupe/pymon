@@ -1,7 +1,5 @@
 import unittest
-
-from src.services.memory import get_virtual_memory
-from src.services.memory import get_swap_memory
+from pymoncore.services.memory import *
 
 
 class TestMemoryInfoCase(unittest.TestCase):

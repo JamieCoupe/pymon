@@ -1,10 +1,9 @@
 import psutil
 from datetime import datetime
 import pandas as pd
-import time
 import os
 from random import choice
-from src.services.utilities import get_size
+from pymoncore.services.utilities import get_size
 
 
 def get_random_process():

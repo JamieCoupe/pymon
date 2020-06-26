@@ -1,6 +1,5 @@
 import psutil
-
-from src.services.utilities import get_size
+from pymoncore.services.utilities import get_size
 
 
 def get_disk_partitions_and_usage():

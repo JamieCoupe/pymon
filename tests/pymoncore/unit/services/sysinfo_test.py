@@ -1,6 +1,5 @@
 import unittest
-from src.services.sysinfo import get_sysinfo
-from src.services.sysinfo import get_boot_time
+from pymoncore.services.sysinfo import *
 
 
 class TestSysInfoCase(unittest.TestCase):
