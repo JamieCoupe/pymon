@@ -1,8 +1,5 @@
 import unittest
-from src.services.cpu import get_static_info
-from src.services.cpu import get_current_frequency
-from src.services.cpu import get_usage_per_core
-from src.services.cpu import get_total_cpu_usage
+from pymoncore.services.cpu import *
 
 
 class TestCpuInfoCase(unittest.TestCase):

@@ -1,6 +1,5 @@
 import unittest
-
-from src.services.utilities import get_size
+from pymoncore.services.utilities import *
 
 
 class TestUtilitiesCase(unittest.TestCase):

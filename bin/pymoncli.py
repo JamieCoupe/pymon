@@ -1,12 +1,8 @@
 import argparse
 import os
 import time
-from src.services import sysinfo
-from src.services import cpu
-from src.services import memory
-from src.services import disk
-from src.services import network
-from src.services import process
+from pymoncore.services import cpu, process, memory, network
+from pymoncore.services import disk, sysinfo
 
 
 def main():

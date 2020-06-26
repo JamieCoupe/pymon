@@ -1,7 +1,5 @@
 import unittest
-
-from src.services.disk import get_disk_partitions_and_usage
-from src.services.disk import get_disk_io
+from pymoncore.services.disk import *
 
 
 def dictonary_subkey_lister(dictonary):
