@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pymon Home</title>
+</head>
+<body>
+    <div>
+        <h1>Pymon Home</h1>
+    </div>
+    <div>
+        <h2>Sysinfo</h2>
+        <ul>
+            <li>Sysinfo - {{ sysinfo }}</li>
+            <li>Boot Time - {{ boottime }}</li>
+        </ul>
+        <h2>Cpu</h2>
+        <ul>
+            <li>Static Info - {{ cpu_static }}</li>
+            <li>Frequency - {{ cpu_freq }}</li>
+            <li>Total Usage - {{ cpu_usage_total }}</li>
+            <li>Usage per Core - {{ cpu_usage_cores }}</li>
+        </ul>
+        <h2>Memory</h2>
+        <ul>
+            <li>Virtual Memory - {{ virtual_memory }}</li>
+            <li>Swap Memory - {{ swap_memory }}</li>
+        </ul>
+        <h2>Disk</h2>
+        <ul>
+            <li>Disks and Partitions - {{ disk_partitions }}</li>
+            <li>Disk IO - {{ disk_io }}</li>
+        </ul>
+        <h2>Network</h2>
+        <ul>
+            <li>Network Interfaces - {{ network_interfaces }}</li>
+            <li>Network IO- {{ network_io }}</li>
+        </ul>
+    </div>
+</body>
+</html>
