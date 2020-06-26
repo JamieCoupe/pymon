@@ -37,5 +37,13 @@
             <li>Network IO- {{ network_io }}</li>
         </ul>
     </div>
+    <div>
+        <h2>Processes</h2>
+        <div>
+            <ol>{ %for process in range(0,processes_length)% }
+                <li>{{ processes[process] }}</li>
+            </ol>
+        </div>
+    </div>
 </body>
 </html>
