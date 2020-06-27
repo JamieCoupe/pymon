@@ -28,6 +28,12 @@
     text-decoration: none;
 }
 
+.body-section {
+    background-color: #f5f9fa;
+    height: 100%;
+    width: 100%;
+}
+
 li:hover{
     color: #fff;
     background: #1e282c;
