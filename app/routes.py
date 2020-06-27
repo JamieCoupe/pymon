@@ -45,7 +45,7 @@ def get_index():
                            virtual_memory=virtual_memory, swap_memory=swap_memory,
                            disk_partitions=disk_partition_info, disk_io=disk_io,
                            network_interfaces=network_interfaces, network_io=network_io,
-                           processes=process_df)
+                           processes=process_df.to_string())
 
 
 @app.route('/home')

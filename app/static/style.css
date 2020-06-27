@@ -6,16 +6,55 @@
     background-color: #2482b5;
 }
 
-.nav_section {
-    width: 25%;
+.sidebar {
+    position: absolute;
+    width: 230px;
     height: 100%;
-    background-color: red;
+    background-color: #222d32;
+    color: #333;
 }
 
-.nav_header {
-    width: 100%;
-    height: 5%;
-    background-color: green;
+.sidebar a {
+    color: #b8c7ce;
+}
+
+.nav-button {
+    padding: 12px 5px 12px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.nav-button a {
+    text-decoration: none;
+}
+
+li:hover{
+    color: #fff;
+    background: #1e282c;
+    border-left-color: #3c8dbc;
+}
+
+#logo {
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#logo-container {
+    display: block;
+    width: 230px;
+}
+
+#nav-title {
+    margin: 0;
+    padding: 10px 25px 10px 15px;
+    color: #4b646f;
+    background: #1a2226;
+    font-size: 12px;
+}
+
+header {
+    height: 50px;
 }
 
 html, body {
