@@ -34,14 +34,58 @@
                         <a href="/network">Network</a>
                     </li>
                     <li class="nav-button">
-                        <a href="/processes">processes</a>
+                        <a href="/processes">Processes</a>
+                    </li>
+                    <li class="nav-button">
+                        <a href="/settings">Settings</a>
                     </li>
             </aside>
             <div class="main-container">
-                <div class="content"></div>
-                <div class="content"></div>
-                <div class="content"></div>
-                <div class="content"></div>
+                <div class="content-container">
+                    <div class="content">
+                        <h3 class="content-title">System Information</h3>
+                        <ul>
+                            <li>OS Type: {{ os_type }}</li>
+                            <li>Hostname: {{ hostname }}</li>
+                            <li>Release: {{ release }}</li>
+                            <li>CPU Cores: {{ cpu_cores }}</li>
+                            <li>Total Memory {{ total_memory }}</li>
+                        </ul>
+                    </div>
+                    <div class="content">
+                        <h3 class="content-title">CPU Usage</h3>
+                        <div>
+                            <p>Total Usage: {{ cpu_usage }}%</p>
+                            <svg width="20%" height="20%" viewBox="0 0 42 42" class="donut">
+                              <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+                              <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="3"></circle>
+
+                              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="3"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3 class="content-title">Memory Usage</h3>
+                        <div>
+                            <p>Total Usage: {{ memory_usage }}%</p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3 class="content-title">IO</h3>
+                        <div>
+                            <h4 class="content-sub-title">Disk IO</h4>
+                            <ul>
+                                <li>Read: {{ disk_read }}</li>
+                                <li>Write: {{ disk_write }}</li>
+                            </ul>
+                            <h4 class="content-sub-title">Network IO</h4>
+                            <ul>
+                                <li>Sent: {{ net_sent }}</li>
+                                <li>Received: {{ net_received }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <footer>
                     <span id="footer-centre">Find the Pymon project on <a href="https://github.com/JamieCoupe/pymon"> GitHub</a></span>
                     <span id="footer-right">Created by Jamie Coupe 2020</span>

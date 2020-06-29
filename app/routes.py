@@ -7,6 +7,7 @@ from pymoncore.services import memory
 from pymoncore.services import disk
 from pymoncore.services import network
 from pymoncore.services import process
+from pymoncore.services.utilities import get_size
 
 
 @app.route('/')
@@ -50,5 +51,19 @@ def get_index():
 
 @app.route('/home')
 def get_home():
+    static_sysinfo = sysinfo.get_sysinfo()
+    disk_io = disk.get_disk_io()
+    net_io = network.get_network_io()
+    total_cpu_usage = cpu.get_total_cpu_usage()
+    total_memory_usage = memory.get_virtual_memory()
+    return render_template("home.html", os_type=static_sysinfo['system'], hostname=static_sysinfo['node_name'],
+                           release=static_sysinfo['release'],
+                           cpu_usage=total_cpu_usage,
+                           memory_usage=total_memory_usage['percentage'],
+                           disk_read=get_size(disk_io['read']), disk_write=get_size(disk_io['write']),
+                           net_sent=get_size(net_io['sent']), net_received=get_size(net_io['received']))
 
-    return render_template("home.html")
+
+@app.route('/test')
+def get_test():
+    return render_template("test.html")
