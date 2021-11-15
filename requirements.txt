@@ -2,7 +2,7 @@ network==0.1
 GPUtil==1.4.0
 urllib3==1.25.9
 dnspython==1.16.0
-pip==20.1.1
+pip==21.1
 psutil==5.7.0
 python-etcd==0.4.5
 redis==3.5.3
